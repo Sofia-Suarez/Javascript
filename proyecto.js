@@ -14,13 +14,13 @@ let opcionIngresada = parseInt(prompt(`Pago en 1 pago no tiene interes, en 3 cuo
       break
       case 2:
         const recargo3cuo = 1.15
-        let precioFinal = ponerPrecio * recargo3cuo
+        let precioFinal = Math.round( ponerPrecio * recargo3cuo)
         alert (`El precio final de su carrera/curso es de $ ${precioFinal}`)    
         salirMenu = true
       break
       case 3:
         const recargo6cuo = 1.20
-        let precioFinal1 = ponerPrecio * recargo6cuo
+        let precioFinal1 = Math.round (ponerPrecio * recargo6cuo)
         alert (`El precio final de su carrera/curso es de $ ${precioFinal1}`)  
         salirMenu = true        
       break         
