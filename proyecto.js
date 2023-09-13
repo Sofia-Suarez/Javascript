@@ -27,8 +27,8 @@ class Carrera{
      this.precio = precio
   }
 }
-const carrera1 = new Carrera("pastelería","Aprende todo sobre pastelería, marketing, etc.", "2 años", 200000)
-const carrera2 = new Carrera("gastronomía", "Aprende todo sobre gastronomía, nutrición, marketing, etc.", "3 años", 300000)
+const carrera1 = new Carrera("pasteleria","Aprende todo sobre pastelería, marketing, etc.", "2 años", 200000)
+const carrera2 = new Carrera("gastronomia", "Aprende todo sobre gastronomía, nutrición, marketing, etc.", "3 años", 300000)
 const seccion1 = []
 seccion1.push(carrera1, carrera2)
 
@@ -50,10 +50,22 @@ function buscarNombre(array){
       (curso) => curso.nombre.toLowerCase() == nombreBuscado.toLowerCase()
   )
   if(busqueda.length == 0){
-      console.log(`No hay coincidencias con ${nombreBuscado}`)
+      console.log (`No hay coincidencias con ${nombreBuscado}`)
   }
   else{
       mostrarListado(busqueda)
+  }
+}
+function buscarNombre1(array){
+  let nombreBuscado = prompt("Ingrese el nombre del curso que desea buscar")
+  let busqueda = array.filter(
+      (curso) => curso.nombre.toLowerCase() == nombreBuscado.toLowerCase()
+  )
+  if(busqueda.length == 0){
+      console.log (`No hay coincidencias con ${nombreBuscado}`)
+  }
+  else{
+      mostrarListado1(busqueda)
   }
 }
 function menu(){
@@ -64,7 +76,8 @@ function menu(){
      2 - Conocé nuestras carreras
      3 - Conocé nuestros precios
      4 - ¡Quiero inscribirme!
-     5 - Buscar carreras y cursos
+     5 - Buscar carreras
+     6 - Buscar carreras
      0 - Salir del menu`))
      switch(opcionIngresada){
         case 1:
@@ -117,7 +130,10 @@ function menu(){
           salirMenu1 = true
          break           
         case 5:
-          buscarNombre()
+          buscarNombre(seccion)
+        break
+        case 6:
+          buscarNombre1(seccion1)
         break
         case 0:
            console.log(`Gracias por utilizar nuestra app. Saludos!`)
